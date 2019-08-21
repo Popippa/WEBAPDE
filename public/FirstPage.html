@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <style>
+            html {
+                background: url('movingcar.gif') no-repeat center center fixed;
+                -webkit-background-size:cover;
+                -moz-background-size:cover;
+                -o-background-size:cover;
+                background-size:cover; 
+                
+            }
+            form {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 0;
+                height: 60vh;
+                width: 100vw;
+            }
+            input[type=submit]{
+                width: 150px;
+                height: 80px;
+                font-family: sans-serif;
+                font-size: 25px;
+                opacity: 0.8;
+                border-radius: 10px;
+                padding: 0;
+                border: 0;
+                text-shadow: 1px 1px 0px rgba(0,0,0,0.5);
+                font-weight: bold;
+                
+            }
+            
+            input[type=submit]:hover {
+                background-color: #ff3176;
+                color: white;
+            }
+            img {
+                width: 70vw;
+            }
+            #wrap {
+                float: left;
+                position: relative;
+                left: 50%;
+            }
+            #content {
+                float: left;
+                position: relative;
+                left: -50%;
+            }
+            body {
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+            <img id="content" src="TYPERACER.png"/>
+        </div>
+        <form id="start" action="gotoStart" method="post">
+            <input type="submit" value="START">
+        
+        </form>
+    
+    </body>
+    
+
+</html>

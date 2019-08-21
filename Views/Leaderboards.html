@@ -1,0 +1,281 @@
+<html>
+    <head>
+        <style>
+            @font-face {
+                font-family: "nintendo";
+                src: url("/fonts/SNES-italic.woff");
+            }
+            
+            
+            html{
+                background: url('movingcar.gif') no-repeat center center fixed;
+                -webkit-background-size:cover;
+                -moz-background-size:cover;
+                -o-background-size:cover;
+                background-size:cover;
+                height:auto;
+            }
+            
+            #NavBar{
+                height: 60px;
+                margin: 0 auto;
+                display: block;
+            }
+            
+            #Leaderboards{
+                float: left;
+                display: inline-block;
+                margin: 0 auto;
+            }
+            #Leaderboards input[type = "submit"]{
+                font-family: "nintendo";
+                background-color: Transparent;
+                outline: none;
+                font-size: 30px;
+                border-color: transparent;
+                font-weight: bold;
+                padding: 12px 28px;
+                color: white;    
+            }
+            
+            #Words{
+                float: left;
+                display: inline-block;
+            }
+            #Words input[type="submit"]{
+                font-family: "nintendo";
+                background-color: Transparent;
+                outline: none;
+                font-size: 30px;
+                border-color: transparent;
+                font-weight: bold;
+                padding: 12px 28px;
+                color: white;
+            }
+            
+            #Users{
+                float: left;
+                display: inline-block;
+            }
+            #Users input[type="submit"]{
+                font-family: "nintendo";
+                background-color: Transparent;
+                outline: none;
+                font-size: 30px;
+                border-color: transparent;
+                font-weight: bold;
+                padding: 12px 28px;
+                color: white;
+            }
+            
+            #Logout{
+                float: right;
+            }
+            #Logout input[type= "submit"]{
+                font-family: "nintendo";
+                background-color: Transparent;
+                outline: none;
+                font-size: 30px;
+                border-color: transparent;
+                font-weight: bold;
+                padding: 12px 28px;
+                color: white;
+            }
+            
+
+            #DifficultyButton input[type = "button"]{
+                font-family: "nintendo";
+                font-size: 30px;
+                padding : 20px 28px;
+                opacity: 0.8;
+            }
+            #DifficultyButton input[type = "submit"]{
+                font-family: "nintendo";
+                outline: none;
+                font-size: 30px;
+                border-color: transparent;
+                font-weight: bold;
+                padding: 20px 28px;
+            }
+            
+            #inputDiv{
+                width:100%;
+                text-align:center;
+            }
+            
+            #AddUser input[type="text"]{
+                outline: none;
+                font-size: 18px;
+                border-color: transparent;
+                padding: 8px 19px;
+                border-width: 2px;
+                border-color: black;
+            }
+            
+            #AddUser input[type="password"]{
+                outline: none;
+                font-size: 18px;
+                border-color: transparent;
+                padding: 8px 19px;
+                border-width: 2px;
+                border-color: black;
+            }
+            
+            #AddUser input[type="submit"]{
+                font-family: "nintendo";
+                background-color: Transparent;
+                outline: none;
+                font-size: 25px;
+                border-color: transparent;
+                font-weight: bold;
+                padding: 12px 28px;
+                color: white;   
+            }
+            
+            #space{
+                height: 30px;
+            }
+                
+            #UserDashboard{
+                display: block;
+                width: 100%;
+            }
+            
+            #User input[type = "submit"]{
+                font-family: "nintendo";
+                outline: none;
+                font-size: 30px;
+                margin: 0 auto;
+            }
+            
+            p1{
+                font-family: "nintendo";
+                font-size: 30px;
+                font-weight: bolder;
+                padding: 12px 28px;
+                color: white;
+            }
+            
+            th{
+                font-family: "nintendo";
+                color: white;
+                padding: 5px;
+                font-size: 40px;
+                text-align: center;
+                background-color:blue;
+                
+            }
+            
+            td{
+                font-family: "nintendo";
+                font-size: 25px;
+                background-color:beige;
+                text-align: center;
+                
+            }
+        </style>
+        
+        <script>
+            function Signup(){
+                document.getElementById("selectLogin").style.display = "none"
+                document.getElementById("Signup").style.display = "inline-block"
+            }
+            
+            function Login(){
+                document.getElementById("selectLogin").style.display = "none"
+                document.getElementById("Login").style.display = "inline-block"
+            }
+            function returnBackSignup(){
+                document.getElementById("selectLogin").style.display = "block"
+                document.getElementById("Signup").style.display = "none"
+            }
+            function returnBackLogin(){
+                document.getElementById("selectLogin").style.display = "block"
+                document.getElementById("Login").style.display = "none"
+            }
+            function changeEasy(){
+                const str2 = document.getElementById("selected")
+                document.getElementById("easyB").style.opacity = 0.5
+                document.getElementById("medB").style.opacity = 1.0
+                document.getElementById("hardB").style.opacity = 1.0
+                
+                str2.value = "EASY"
+            }
+            function changeMedium(){
+                const str2 = document.getElementById("selected")
+                document.getElementById("easyB").style.opacity = 1.0
+                document.getElementById("medB").style.opacity = 0.5
+                document.getElementById("hardB").style.opacity = 1.0
+                
+                str2.value = "MEDIUM"
+            }
+            function changeHard(){
+                const str2 = document.getElementById("selected")
+                document.getElementById("easyB").style.opacity = 1.0
+                document.getElementById("medB").style.opacity = 1.0
+                document.getElementById("hardB").style.opacity = 0.5
+                
+                str2.value = "HARD"
+            }
+        </script>
+    
+    </head>
+    <body>
+        <div id="NavBar">
+            <img src="Logo2.png" style="height:100%;text-align: center; display: inline-block;float: left;">
+            
+            <form id="Leaderboards" method="post" action="admin_Leaderboards">
+                <input type="submit" value="Leaderboards" id="leaderboardButton">
+            </form>
+            
+            <form id="Users" method="post" action="admin_Users">
+                <input type="submit" value="Users">
+            </form>
+            
+            <form id="Words" method="post" action="admin_Words">
+                <input type="submit" value="Words">
+            </form>
+            
+            <form id="Logout" action="logout" method="post">
+                <p1>Logged in as: {{us}}</p1>
+                <input type="submit" value="Logout">
+            </form>
+        </div>
+            
+        <div id="space"></div>
+        <div id="inputDiv">
+            <form id="AddUser" action="AddUser" method="post">
+                    <input type="text" placeholder="Input New User" name="Admin_Us">
+                    <input type="password" placeholder="Input password" name="Admin_Pw">
+                    <input type="submit" value="Add New User">
+            </form>  
+        </div>
+        
+        <div id="UserDashboard">
+                <table style="text-align: center; width: 100%;" name="leaderboardTable">
+                        <tbody>
+                            <tr>
+                                <th> Player Name</th>>
+                            </tr>
+                            
+                            {{#each data}}
+                            <tr>
+                                <td>
+                                    <div id="tab">
+                                        {{u_username}}       
+                                        <form id="User" action="deleteUser" method="post" style="display:inline">
+                                            <input type="hidden" name="username_Del" id="us_Del" value="{{u_username}}">
+                                            <input type="hidden" name="password_Del" id="password_Del" value="{{u_password}}">
+                                            <input type="submit" value="Delete">
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                            
+                        </tbody>
+                    </table>    
+                <br>
+        </div>
+    </body>
+</html>
