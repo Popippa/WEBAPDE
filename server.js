@@ -266,8 +266,8 @@ app.post("/savescore", urlencoder, (req,res)=>{
     req.session.difficulty = null
 })
 
-
-app.listen(3000, ()=>{
+var port = process.env.PORT || 3000
+app.listen(port, ()=>{
     console.log("live at port 3000")
    
 })
